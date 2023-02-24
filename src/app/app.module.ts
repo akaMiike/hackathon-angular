@@ -12,12 +12,15 @@ import {ToastModule} from 'primeng/toast';
 import {MessageModule} from 'primeng/message';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import {TooltipModule} from 'primeng/tooltip';
+import {MultiSelectModule} from 'primeng/multiselect';
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    MultiSelectModule,
     TooltipModule,
     MessageModule,
     ToastModule,

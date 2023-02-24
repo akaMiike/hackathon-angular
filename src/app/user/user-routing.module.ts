@@ -7,6 +7,7 @@ import { SaveUserComponent } from './components/save-user/save-user.component';
 const routes: Routes = [
   { path: '', component:  HomeComponent},
   { path: 'save', component: SaveUserComponent},
+  { path: 'update/:id', component: SaveUserComponent},
   { path: '**', redirectTo: ''}
 ];
 

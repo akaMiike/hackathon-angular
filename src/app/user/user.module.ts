@@ -15,13 +15,15 @@ import { MessageModule } from 'primeng/message';
 import { SaveUserComponent } from './components/save-user/save-user.component';
 import { RouterModule } from '@angular/router';
 import { TooltipModule } from 'primeng/tooltip';
+import { ListEmailProvidersComponent } from './components/list-email-providers/list-email-providers.component';
 
 @NgModule({
   declarations: [
     ListUsersComponent,
     HomeComponent,
     ListBirthdaysComponent,
-    SaveUserComponent
+    SaveUserComponent,
+    ListEmailProvidersComponent
   ],
   imports: [
     TooltipModule,

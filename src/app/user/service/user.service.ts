@@ -3,7 +3,6 @@ import { HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { User } from '../models/User.model';
 import { Observable } from 'rxjs';
-import { UserRegister } from '../models/UserRegister.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,10 +23,10 @@ export class UserService {
     });
   }
 
-  getUsersBirthdaysOfMonth(month?: string): Observable<User>{
-    return this.http.get<User>(this.URL + '/birthdays', {
+  getUsersBirthdaysOfMonth(month?: string): Observable<User[]>{
+    return this.http.get<User[]>(this.URL + '/birthdays', {
       params:{
-        month: month
+        ...(month && {month: month})
       }
     })
   }
@@ -46,10 +45,22 @@ export class UserService {
     })
   }
 
+  updateUser(userId: number, name: string, email: string, login: string, password: string, birthDate?: string){
+    return this.http.put(this.URL + `/${userId}`, {
+      name: name,
+      email: email,
+      login: login,
+      password: password,
+      ...(birthDate && {birthDate: birthDate})
+    })
+  }
+
   deleteUser(userId: number){
     return this.http.delete(this.URL + `/${userId}`)
   }
 
-
+  getUserById(userId: number): Observable<User>{
+    return this.http.get<User>(this.URL + `/${userId}`)
+  }
 
 }

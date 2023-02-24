@@ -5,4 +5,6 @@
 <div class="justify-content-center flex flex-column p-7">
     <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
     <app-list-users *ngIf="activeItem.id == '1'"></app-list-users>
+    <app-list-birthdays *ngIf="activeItem.id == '2'"></app-list-birthdays>
+    <app-list-email-providers *ngIf="activeItem.id == '3'"></app-list-email-providers>
 </div>
