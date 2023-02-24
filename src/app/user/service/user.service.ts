@@ -35,6 +35,10 @@ export class UserService {
     return this.http.get<string[]>(this.URL + '/email-providers')
   }
 
+  deleteUser(userId: number){
+    return this.http.delete(this.URL + `/${userId}`)
+  }
+
 
 
 }
