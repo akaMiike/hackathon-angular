@@ -1,0 +1,8 @@
+<div class="text-center">
+    <h1 class="mt-4 mb-5 text-5xl">User Administrator</h1>
+</div>
+
+<div class="justify-content-center flex flex-column p-7">
+    <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+    <app-list-users *ngIf="activeItem.id == '1'"></app-list-users>
+</div>

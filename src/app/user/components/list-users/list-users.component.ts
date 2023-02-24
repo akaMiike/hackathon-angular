@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/User.model';
+import { User } from '../../models/User.model';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-list-users',
@@ -8,13 +9,16 @@ import { User } from '../models/User.model';
 })
 export class ListUsersComponent implements OnInit {
 
-  value: string;
-
   users: User[];
+  nameInitial: string;
 
-  constructor() { }
+  constructor(
+    private userService: UserService
+  ) {
+   }
 
   ngOnInit(): void {
+
     this.users = [{
       name: "Michael",
       login: "Nicholas",
@@ -27,6 +31,10 @@ export class ListUsersComponent implements OnInit {
       email: "mike.abc@abc.com",
       birthDate: "18/09/2001"
     }];
+  }
+
+  getAllUsers(){
+    this.userService.getAllUsers()
   }
 
 }
