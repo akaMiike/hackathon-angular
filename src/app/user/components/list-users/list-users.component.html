@@ -3,10 +3,10 @@
         <ng-template pTemplate="caption">
             <div class="table-header flex align-items-center">
                 <span class="text-xl">Users list</span>
-                <span class="p-input-icon-left ml-auto">
-                    <i class="pi pi-search"></i>
-                    <input pInputText [(ngModel)]="nameInitial" type="text" placeholder="Search by name initial" maxlength="1"/>
-                </span>
+                <form [formGroup]="form" class="ml-auto">
+                    <input pInputText formControlName="nameInitial" type="text" placeholder="Search by name initial" maxlength="1"/>
+                    <button pButton type="submit" icon="pi pi-search" iconPos="left" class="ml-1" (click)="getAllUsers()"></button>
+                </form>
             </div>
         </ng-template>
 
@@ -16,6 +16,7 @@
                 <th>Login</th>
                 <th>Email</th>
                 <th>Birth Date</th>
+                <th>Created At</th>
                 <th style="width:10%"></th>
             </tr>
         </ng-template>
@@ -25,6 +26,7 @@
                 <td>{{user.login}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.birthDate}}</td>
+                <td>{{user.createdAt | date:'dd/MM/yyyy hh:MM:ss'}}</td>
                 <td>
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-warning" ></button>
                     <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger ml-2" ></button>

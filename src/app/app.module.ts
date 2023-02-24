@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
 import {TabMenuModule} from 'primeng/tabmenu';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {TabMenuModule} from 'primeng/tabmenu';
     AppComponent
   ],
   imports: [
+    HttpClientModule,
     InputTextModule,
     BrowserModule,
     BrowserAnimationsModule,

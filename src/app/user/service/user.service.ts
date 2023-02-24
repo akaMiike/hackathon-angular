@@ -9,14 +9,14 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private readonly URL: string = `${environment.api}/users`
+  private readonly URL: string = `${environment.api}/user`
 
   constructor(
     private http: HttpClient
   ) {}
 
-  getAllUsers(nameInitial?: string): Observable<User>{
-    return this.http.get<User>(this.URL, {
+  getAllUsers(nameInitial?: string): Observable<User[]>{
+    return this.http.get<User[]>(this.URL, {
       params: {
         nameInitial: nameInitial
       }
