@@ -11,12 +11,14 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ToastModule} from 'primeng/toast';
 import {MessageModule} from 'primeng/message';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import {TooltipModule} from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    TooltipModule,
     MessageModule,
     ToastModule,
     HttpClientModule,

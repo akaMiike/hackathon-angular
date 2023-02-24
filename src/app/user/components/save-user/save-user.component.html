@@ -1,0 +1,48 @@
+<div class="text-center">
+    <h1 class="mt-4 mb-5 text-5xl">New User</h1>
+</div>
+
+<div class="flex justify-content-center align-content-center pt-5">
+    <div class="p-fluid">
+        <form [formGroup]="userForm" class="align-items-center">
+            <div class="grid">
+                <div class="p-field col-12">
+                    <p class="mb-1">Name</p>
+                    <input formControlName="name" type="text" id="name" pInputText>
+                </div>
+                <div class="p-field col-12">
+                    <p class="mb-1">Email</p>
+                    <input formControlName="email" type="text" id="email" pInputText required>
+                </div>
+                <div class="p-field col-12">
+                    <p class="mb-1">Login</p>
+                    <input formControlName="login" type="text" id="login" pInputText required>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="p-field col-4">
+                    <p class="mb-1">Birth Date</p>
+                    <input formControlName="birthDate" type="date" id="birthDate" pInputText>
+                </div>
+                <div class="p-field col-8">
+                    <p class="mb-1">Password</p>
+                    <input 
+                    pTooltip="A senha deve possuir no mínimo 8 caracteres, contendo pelo menos: 
+                    1 letra maíuscula,
+                    1 letra minúscula,
+                    1 número e 1 caractere especial."
+                    tooltipPosition="right"
+                    formControlName="password" type="password" id="password" pInputText required>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="p-field col-2 col-offset-8">
+                    <button class="p-button-success" pButton label="Save" icon="pi pi-check" iconPos="left" type="submit" (click)="createUser()"></button>
+                </div>
+                <div class="p-field col-2">
+                    <button class="p-button-danger" pButton label="Cancel" icon="pi pi-times" routerLink="/users"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

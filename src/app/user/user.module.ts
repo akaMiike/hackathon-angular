@@ -8,13 +8,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
 import { HomeComponent } from './components/home/home.component';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { ListBirthdaysComponent } from './components/list-birthdays/list-birthdays.component';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { MessageModule } from 'primeng/message';
+import { SaveUserComponent } from './components/save-user/save-user.component';
+import { RouterModule } from '@angular/router';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
     ListUsersComponent,
-    HomeComponent
+    HomeComponent,
+    ListBirthdaysComponent,
+    SaveUserComponent
   ],
   imports: [
+    TooltipModule,
+    MessageModule,
+    ToastModule,
+    ConfirmDialogModule,
     TabMenuModule,
     ButtonModule,
     InputTextModule,
@@ -22,6 +35,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
     FormsModule,
     TableModule,
     CommonModule,
+    RouterModule,
     UserRoutingModule
   ]
 })

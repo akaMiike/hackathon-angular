@@ -2,11 +2,11 @@
     <p-table [value]="users" styleClass="p-datatable-striped">
         <ng-template pTemplate="caption">
             <div class="table-header flex align-items-center">
-                <span class="text-xl">Users list</span>
-                <form [formGroup]="form" class="ml-auto">
+                <form [formGroup]="form">
                     <input pInputText formControlName="nameInitial" type="text" placeholder="Search by name initial" maxlength="1"/>
-                    <button pButton type="submit" icon="pi pi-search" iconPos="left" class="ml-1" (click)="getAllUsers()"></button>
+                    <button pButton type="submit" icon="pi pi-search" iconPos="left" class="ml-1" (click)="getAllUsers()" ></button>
                 </form>
+                <button class="ml-auto" pButton type="button" icon="pi pi-plus" iconPos="left" label="Create New" routerLink="/users/save"></button>
             </div>
         </ng-template>
 

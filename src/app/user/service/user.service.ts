@@ -3,6 +3,7 @@ import { HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { User } from '../models/User.model';
 import { Observable } from 'rxjs';
+import { UserRegister } from '../models/UserRegister.model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,16 @@ export class UserService {
 
   getAllUsersEmailProviders(): Observable<string[]>{
     return this.http.get<string[]>(this.URL + '/email-providers')
+  }
+
+  createUser(name: string, email: string, login: string, password: string, birthDate?: string){
+    return this.http.post(this.URL, {
+      name: name,
+      email: email,
+      login: login,
+      password: password,
+      ...(birthDate && {birthDate: birthDate})
+    })
   }
 
   deleteUser(userId: number){
