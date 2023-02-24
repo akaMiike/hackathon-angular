@@ -1,0 +1,26 @@
+<div class="shadow-2 flex justify-content-center">
+    <p-table [value]="usersBirthday" styleClass="p-datatable-striped">
+        <ng-template pTemplate="caption">
+            Birthdays
+        </ng-template>
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Login</th>
+                <th>Email</th>
+                <th>Birth Date</th>
+                <th>Created At</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-user>
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.login}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.birthDate}}</td>
+                <td>{{user.createdAt | date:'dd/MM/yyyy hh:MM:ss'}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
